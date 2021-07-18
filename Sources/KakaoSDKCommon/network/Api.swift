@@ -14,6 +14,7 @@
 
 import Foundation
 import Alamofire
+import UIKit.UIImage
 
 public let API = Api.shared
 
