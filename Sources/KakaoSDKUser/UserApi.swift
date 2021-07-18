@@ -67,6 +67,7 @@ final public class UserApi {
     ///   <string>kakaokompassauth</string>
     /// </array>
     /// ```
+    @available(iOSApplicationExtension, unavailable)
     public static func isKakaoTalkLoginAvailable() -> Bool {
         return UIApplication.shared.canOpenURL(URL(string:Urls.compose(.TalkAuth, path:Paths.authTalk))!)
     }

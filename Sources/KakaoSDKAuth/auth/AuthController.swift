@@ -62,6 +62,7 @@ public class AuthController {
     
     // MARK: Login with KakaoTalk
     /// :nodoc:
+    @available(iOSApplicationExtension, unavailable)
     public func authorizeWithTalk(channelPublicIds: [String]? = nil,
                                   serviceTerms: [String]? = nil,
                                   completion: @escaping (OAuthToken?, Error?) -> Void) {
@@ -444,6 +445,7 @@ extension URL {
 }
 
 @available(iOS 13.0, *)
+@available(iOSApplicationExtension, unavailable)
 class DefaultPresentationContextProvider: NSObject, ASWebAuthenticationPresentationContextProviding {
     public func presentationAnchor(for session: ASWebAuthenticationSession) -> ASPresentationAnchor {
         return UIApplication.shared.keyWindow ?? ASPresentationAnchor()

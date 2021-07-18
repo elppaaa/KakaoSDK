@@ -33,7 +33,7 @@ public class LinkApi {
         }
         return false
     }
-    
+    @available(iOSApplicationExtension, unavailable)
     public static func isKakaoLinkAvailable() -> Bool {
         return UIApplication.shared.canOpenURL(URL(string:Urls.compose(.TalkLink, path:Paths.talkLink))!)
     }
