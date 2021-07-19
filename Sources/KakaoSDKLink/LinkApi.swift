@@ -17,6 +17,8 @@ import Foundation
 import Alamofire
 import KakaoSDKCommon
 import KakaoSDKTemplate
+import UIKit.UIApplication
+import UIKit.UIImage
 
 /// 카카오링크 호출을 담당하는 클래스입니다.
 public class LinkApi {
@@ -33,7 +35,6 @@ public class LinkApi {
         }
         return false
     }
-    @available(iOSApplicationExtension, unavailable)
     public static func isKakaoLinkAvailable() -> Bool {
         return UIApplication.shared.canOpenURL(URL(string:Urls.compose(.TalkLink, path:Paths.talkLink))!)
     }
