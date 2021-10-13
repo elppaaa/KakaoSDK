@@ -35,6 +35,7 @@ public class LinkApi {
         }
         return false
     }
+    
     public static func isKakaoLinkAvailable() -> Bool {
         return UIApplication.shared.canOpenURL(URL(string:Urls.compose(.TalkLink, path:Paths.talkLink))!)
     }

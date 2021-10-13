@@ -16,6 +16,7 @@ import Foundation
 import UIKit
 
 extension UIApplication {
+
     public class func getMostTopViewController(base: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
 
         if let naviController = base as? UINavigationController {
