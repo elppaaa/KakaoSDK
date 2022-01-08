@@ -13,8 +13,8 @@
 //  limitations under the License.
 
 import Foundation
+import UIKit
 import Alamofire
-import UIKit.UIImage
 
 public let API = Api.shared
 
@@ -46,8 +46,13 @@ public class Api {
 
 extension Api {    
     private func initSession() {
-        addSession(type: .Api, session:Session(configuration: URLSessionConfiguration.default, interceptor: ApiRequestAdapter()))
-        addSession(type: .Auth, session:Session(configuration: URLSessionConfiguration.default, interceptor: ApiRequestAdapter()))
+        let apiSessionConfiguration : URLSessionConfiguration = URLSessionConfiguration.default
+        apiSessionConfiguration.tlsMinimumSupportedProtocol = .tlsProtocol12
+        addSession(type: .Api, session:Session(configuration: apiSessionConfiguration, interceptor: ApiRequestAdapter()))
+        
+        let authSessionConfiguration : URLSessionConfiguration = URLSessionConfiguration.default
+        authSessionConfiguration.tlsMinimumSupportedProtocol = .tlsProtocol12
+        addSession(type: .Auth, session:Session(configuration: authSessionConfiguration, interceptor: ApiRequestAdapter()))
     }
     
     public func addSession(type:SessionType, session:Session) {
